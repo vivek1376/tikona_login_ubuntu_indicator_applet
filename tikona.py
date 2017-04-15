@@ -154,11 +154,15 @@ def Logout(_, indicator_obj=None):
 
 
 def main():
-    indicator = appindicator.Indicator.new(APPINDICATOR_ID, gtk.STOCK_INFO, appindicator.IndicatorCategory.SYSTEM_SERVICES)
+    if check_internet():
+        app_icon = gtk.STOCK_YES
+    else:
+        app_icon = gtk.STOCK_INFO
+    
+    indicator = appindicator.Indicator.new(APPINDICATOR_ID, app_icon, appindicator.IndicatorCategory.SYSTEM_SERVICES)
     indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
     indicator.set_menu(build_menu(indicator))
     notify.init(APPINDICATOR_ID)
-    notify_internet_status(indicator)
 
     gtk.main()
 
