@@ -3,8 +3,6 @@
 import sys
 import mechanize
 import time
-from optparse import OptionParser
-import getpass
 import socket
 import signal
 
@@ -13,9 +11,6 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
 from gi.repository import AppIndicator3 as appindicator
 from gi.repository import Notify as notify
-
-import json
-from urllib2 import Request, urlopen, URLError
 
 APPINDICATOR_ID = 'tikona_login_appindicator'
 
@@ -124,7 +119,7 @@ def Login(_, indicator_obj=None):
         signal.alarm(5)
         response = br.submit()
     except Exception as ex:
-        print "exception1: %s" % str(ex)
+        print "exception: %s" % str(ex)
 
     signal.alarm(0)
 
