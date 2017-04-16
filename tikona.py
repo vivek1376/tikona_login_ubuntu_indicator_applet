@@ -14,13 +14,13 @@ from gi.repository import Notify as notify
 
 APPINDICATOR_ID = 'tikona_login_appindicator'
 
-tikona_username = '1120349127'
-tikona_password = 'viVtk1@88'
+tikona_username = 'user'
+tikona_password = 'pass'
 
-url1='http://1.254.254.254'
-url2='https://login.tikona.in/userportal/login.do?requesturi=http%3A%2F%2F1.254.254.254%2F%3F&act=null'
-url3='https://login.tikona.in/userportal/newlogin.do?phone=0'
-url4='https://login.tikona.in/userportal/logout.do?svccat=1'
+url1 = 'http://1.254.254.254'
+url2 = 'https://login.tikona.in/userportal/login.do?requesturi=http%3A%2F%2F1.254.254.254%2F%3F&act=null'
+url3 = 'https://login.tikona.in/userportal/newlogin.do?phone=0'
+url4 = 'https://login.tikona.in/userportal/logout.do?svccat=1'
 
 
 def build_menu(ind):
