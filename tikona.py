@@ -118,10 +118,10 @@ def Login(_, indicator_obj=None):
     try:
         signal.alarm(5)
         response = br.submit()
+        signal.alarm(0)
     except Exception as ex:
+        signal.alarm(0)
         print "exception: %s" % str(ex)
-
-    signal.alarm(0)
 
     notify_internet_status(indicator_obj)
 
